@@ -49,6 +49,7 @@ public class testBitOperation {
 		System.out.println(clearRightBits(169, 3));
 		
 		System.out.println(updateBit(169, 3, false));
+//		git 테스트
 
 	}
 
