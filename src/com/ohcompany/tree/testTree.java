@@ -31,7 +31,7 @@ class Tree {
 	}
 	public void preorder(Node node) {
 		if (node != null) {
-			System.out.println(node.data);
+			System.out.print(node.data + " > ");
 			preorder(node.left);
 			preorder(node.right);
 		}

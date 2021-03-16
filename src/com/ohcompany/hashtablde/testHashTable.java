@@ -17,10 +17,13 @@ class HashTable {
 			this.value = value;
 		}
 	}
+	
 	LinkedList<Node>[] data;
+	
 	HashTable(int size) {
 		this.data = new LinkedList[size];
 	}
+	
 	int getHashCode(String key) {
 		int hashcode = 0;
 		for (char c : key.toCharArray()) {
@@ -28,9 +31,11 @@ class HashTable {
 		}
 		return hashcode;
 	}
+	
 	int convertToIndex(int hashcode) {
 		return hashcode % data.length;
 	}
+	
 	Node searchKey(LinkedList<Node> list, String key) {
 		if (list == null) {
 			return null;
@@ -42,6 +47,7 @@ class HashTable {
 		}
 		return null;
 	}
+	
 	void put (String key, String value) {
 		int hashcode = getHashCode(key);
 		int index = convertToIndex(hashcode);
@@ -57,6 +63,7 @@ class HashTable {
 			node.setValue(value);
 		}
 	}
+	
 	String get(String key) {
 		int hashcode = getHashCode(key);
 		int index = convertToIndex(hashcode);

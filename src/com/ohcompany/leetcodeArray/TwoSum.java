@@ -61,7 +61,7 @@ public class TwoSum {
 		Solution1 sol = new Solution1();
 		int[] result = sol.twoSum(nums, 5);
 		System.out.println(result[0] + ", " + result[1]);
-//		System.out.println(twoSum(input, 9));
+//		System.out.println(twoSum(nums, 5));
 
 	}
 

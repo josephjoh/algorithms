@@ -9,7 +9,7 @@ public class testBitOperation {
 	
 //	i자릿수의 bit를 1로 셋팅해주고 모든 bit값을 출력
 	static int setBit(int num, int i) {
-		return (num | (1 << 3));
+		return (num | (1 << i));
 	}
 	
 //  i자릿수의 bit를 0으로 하고 나머지 bit는 기존 num의 bit를 출력하여 이 모든 bit값을 출력

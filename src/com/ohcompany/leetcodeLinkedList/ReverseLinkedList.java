@@ -10,44 +10,69 @@ class ListNode {
 public class ReverseLinkedList {
 
 //	iterative solution
-//	public static ListNode reverseList(ListNode head) {
-//		ListNode newHead = null;
-//		
-//		while (head != null) {
-//			ListNode next = head.next;
-//			head.next = newHead;
-//			newHead = head;
-//			head = next;
-//		}
-//		return newHead;
-//	}
-//	
-////	recursive solution
-//	public ListNode reverseList2(ListNode head) {
-//		return reverseListInt(head, null);
-//	}
-//	
-//	private ListNode reverseListInt (ListNode head, ListNode newHead) {
-//		if (head == null) {
-//			return newHead;
-//		}
-//		ListNode next = head.next;
-//		head.next = newHead;
-//		return reverseListInt(next, head);
-//	}
-//	
-//	public static void main(String[] args) {
-//		ListNode ls = new ListNode(1);
+	public static ListNode reverseList(ListNode head) {
+		ListNode newHead = null;
+		
+		while (head != null) {
+			ListNode next = head.next;
+			head.next = newHead;
+			newHead = head;
+			head = next;
+		}
+		return newHead;
+	}
+	
+//	recursive solution
+	public static ListNode reverseList2(ListNode head) {
+		return reverseListInt(head, null);
+	}
+	
+	private static ListNode reverseListInt (ListNode head, ListNode newHead) {
+		if (head == null) {
+			return newHead;
+		}
+		ListNode next = head.next;
+		head.next = newHead;
+		return reverseListInt(next, head);
+	}
+	
+	private static void printLinkedList(ListNode head) {
+		while (head != null) {
+			System.out.print(head.val + " > ");
+			head = head.next;
+		}
+		System.out.println();
+	}
+	public static void main(String[] args) {
+		ListNode ls = new ListNode(1);
+		ls.next = new ListNode(2);
+		ls.next.next = new ListNode(3);
+		ls.next.next.next = new ListNode(4);
+//		ls.val = 2;
+//		ls.next.val = 2;
+//		ls.next.next.val = 3;
+//		ls.next.next.next.val = 4;
+//		ls.next.next.next.next.val = 5;
+		
+		System.out.println(ls.val);
+		System.out.println(ls.next.val);
+		System.out.println(ls.next.next.val);
+		System.out.println(ls.next.next.next.val);
+		
+		printLinkedList(ls);
+		
+		//Iterator
+//		printLinkedList(reverseList(ls));
+		
+		//Recursion
+		printLinkedList(reverseList2(ls));
+		
+		
 //		System.out.println(ls.val);
-//		System.out.println(ls.next);
-////		ls.next = 2;
-////		ls.next.val = 2;
-////		ls.next.next.val = 3;
-////		ls.next.next.next.val = 4;
-////		ls.next.next.next.next.val = 5;
-//		
-//		System.out.println(reverseList(ls));
-//	}
+//		System.out.println(ls.next.val);
+//		System.out.println(ls.next.next.val);
+//		System.out.println(ls.next.next.next.val);
+	}
 
 }
 //class LinkedList { 
